@@ -122,15 +122,7 @@ if __name__=='__main__':
         'moa_buffer_capacity':1000,
         'shovel_buffer_capacity':100,
         #'load_dir':None,
-        #'load_dir':'./params/exp20230410_004313_4p', # no-long-ToM
-        #'load_dir':'./params/exp20230423_012756_4p',
         'load_dir':'./params/exp20230119_004042_4p',
-        #'load_dir':'./params/exp20230118_165322_4p',
-        #'load_dir':'./params/exp20230116_235849_4p',
-        #'load_dir':'./params/exp20230116_005851_4p',
-        #'load_dir':'./params/exp20230114_222914_4p',
-        #'load_dir':'./params/exp20230113_122853_4p',
-        #'load_dir':'./params/exp20221019_162421_4p',
         'save_dir':f'./params/exp{time.strftime("%Y%m%d_%H%M%S")}_{config["env_config"]["player_num"]}p'
     }
     os.makedirs(config['moa_config']['save_dir'])
@@ -158,11 +150,8 @@ if __name__=='__main__':
         'id': 1,
         'env_creator':env_creator,
         'env_num':25,
-        'load_dir':None,
-        #'load_dir':'./params/lola/exp20230123_115158_4p',
+        # 'load_dir':None,
         'load_dir':'./params/lola/exp20230123_185154_4p',
-        #'load_dir':'./params/lola/exp20230123_173827_4p',
-        #'load_dir':'./params/lola/exp20221203_125305_4p',
         'save_dir':f'./params/lola/exp{time.strftime("%Y%m%d_%H%M%S")}_{config["env_config"]["player_num"]}p',
         'train':False,
     }
@@ -257,64 +246,13 @@ if __name__=='__main__':
     '''
     # mp.set_start_method('forkserver')
     # tom_trainer=AlphaZeroTrainer(config)
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-04-10_00-43-13tmer3nx9/checkpoint_0000101/checkpoint-101') no-long-ToM
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-19_00-40-42tlhif_28/checkpoint_000081/checkpoint-81')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-18_16-53-22zibw3hpf/checkpoint_000082/checkpoint-82')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-16_23-58-495pl5389l/checkpoint_000061/checkpoint-61')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-17_23-28-39mu6z723r/checkpoint_000041/checkpoint-41')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-16_00-58-51o9lt370d/checkpoint_000223/checkpoint-223')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-14_22-29-14dhyqv2z4/checkpoint_000162/checkpoint-162')
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-13_12-28-53zaat2esu/checkpoint_000081/checkpoint-81')
     
     a3c_trainer=a3c.A3CTrainer(a3c_config)
-    #tom_trainer.restore('/root/ray_results/AlphaZeroTrainer_Snowdrift_2022-10-19_16-24-212c1x8o34/checkpoint_000271/checkpoint-271')
-    #/root/ray_results/A3C_Snowdrift_2022-10-18_06-15-545zt1a13g/checkpoint_005001/checkpoint-5001
-    #prosocial: /root/ray_results/A3C_Snowdrift_2022-10-18_06-17-31x5rupa8o/checkpoint_005001/checkpoint-5001
-    #3RL1rand: AlphaZeroTrainer_Snowdrift_2022-10-27_11-47-507wvk3dij
-    #1RL3rand: AlphaZeroTrainer_Snowdrift_2022-10-27_11-50-09q706x11r
-    #4rand:/root/ray_results/AlphaZeroTrainer_Snowdrift_2022-10-27_11-52-317vom5enh/checkpoint_005002/checkpoint-5002
-    #1ToM3rand:AlphaZeroTrainer_Snowdrift_2022-10-27_05-17-02ev8sffpz
-
-    #3fix1random:A3C_Snowdrift_2022-10-27_16-24-414qtoo_et
-    #1fix3random:A3C_Snowdrift_2022-10-27_16-27-52zhdfrhax
-    #1fix3train:A3C_Snowdrift_2022-10-27_16-31-366kib10uv
-    #3fix1train:/root/ray_results/A3C_Snowdrift_2022-10-27_16-35-394l26nirf/checkpoint_005002/checkpoint-5002
-    #tom_trainer.restore('/root/ray_results/A3C_Snowdrift_2022-10-27_02-08-35h73h218w/checkpoint_005001/checkpoint-5001')
-    #a3c_trainer.restore('./checkpoint_009002/checkpoint-9002')
     a3c_trainer.restore('./checkpoint_010004/checkpoint-10004')
-    #tom_trainer.restore('/root/ray_results/A3C_Snowdrift_2023-01-20_00-07-064keeooxt/checkpoint_009003/checkpoint-9003')
-    #4prosocial:/root/ray_results/A3C_Snowdrift_2022-10-27_16-49-39aeidmz_a/checkpoint_009002/checkpoint-9002
-    #3prosocial+1RL:  /root/ray_results/A3C_Snowdrift_2022-10-28_02-34-369trpd9vh/checkpoint_009003/checkpoint-9003
-    #1prosocial+3RL:A3C_Snowdrift_2022-10-28_02-37-17b2fk1_1n
-    #3prosocial+1fixed:/root/ray_results/A3C_Snowdrift_2022-10-28_02-43-54m9f8cg7v/checkpoint_009003/checkpoint-9003
-    #3prosocial+1random:A3C_Snowdrift_2022-10-28_02-41-03t25yzf19
-    #1prosocial+3fixed:/root/ray_results/A3C_Snowdrift_2022-10-28_02-46-23iax765me/checkpoint_009003/checkpoint-9003
-    #1prosocial+3random:/root/ray_results/A3C_Snowdrift_2022-10-28_02-50-12qfdnua10/checkpoint_009003/checkpoint-9003
     
-    #1ToM+3cleaner:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-20_20-24-25j1bugegz/checkpoint_000102/checkpoint-102
-    #1ToM+3random:/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-20_23-35-403pzlhnmb
-    #3ToM+1cleaner:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_00-45-5503ozkts0/checkpoint_000102/checkpoint-102
-    #3ToM+1random:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_00-43-36w_f5yc8g/checkpoint_000102/checkpoint-102
-    #1ToM+3prosocial:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_14-43-087tdwmqif/checkpoint_009024/checkpoint-9024
-    #1ToM+3train:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_15-44-48opk1dson/checkpoint_009024/checkpoint-9024
-    #3ToM+1prosocial:/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_19-59-25_hh1v1r_
-    #3ToM+1train:/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-21_19-59-554q1n0t4t
-    
-    #1LOLA+3random:/root/ray_results/A3C_Snowdrift_2023-01-24_10-05-165e8oadhr/checkpoint_009004/checkpoint-9004
-    #1LOLA+3cleaner:/root/ray_results/A3C_Snowdrift_2023-01-24_10-13-11y94rcrm3/checkpoint_009004/checkpoint-9004
-    #1LOLA+3train:/root/ray_results/A3C_Snowdrift_2023-01-24_10-12-40lwx1adzs/checkpoint_009024/checkpoint-9024
-    #1LOLA+3prosocial:/root/ray_results/A3C_Snowdrift_2023-01-24_10-16-09f_2eghug/checkpoint_009024/checkpoint-9024
-    #3LOLA+1cleaner:/root/ray_results/A3C_Snowdrift_2023-01-24_10-53-01ccatbnqq/checkpoint_009004/checkpoint-9004
-    #3LOLA+1random: /root/ray_results/A3C_Snowdrift_2023-01-24_10-50-59kxsxa9r1/checkpoint_009004/checkpoint-9004
-    #3LOLA+1train:/root/ray_results/A3C_Snowdrift_2023-01-24_11-03-09ew3t5976/checkpoint_009024/checkpoint-9024
-    #3LOLA+1prosocial:/root/ray_results/A3C_Snowdrift_2023-01-24_11-03-59nnt97ey8/checkpoint_009024/checkpoint-9024
-    #3LOLA+1ToM:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-24_12-48-36zgqbr9m7/checkpoint_000021/checkpoint-21
-    #3train+1ToM:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-24_13-13-25tns7kivp/checkpoint_009024/checkpoint-9024
-    #1LOLA+3ToM:/root/ray_results/AlphaZeroTrainer_Snowdrift_2023-01-24_13-22-226ikhheow/checkpoint_009044/checkpoint-9044
-    '''
     for i in range(4):
-        tom_trainer.get_policy(f'ToM{i+1}').set_weights(torch.load(f'./state_dict/ToM/ToM{i+1}.pth'))
-    '''
+        a3c_trainer.get_policy(f'ToM{i+1}').set_weights(torch.load(f'./state_dict/ToM/ToM{i+1}.pth'))
+    
     for i in range(5001):
         result=a3c_trainer.train()
         print(pretty_print(result))
